@@ -74,7 +74,6 @@ def select_age(age_choice):
         st.write(str(df_graph.iloc[-2]['Date']) + ': ' + str(df_graph.iloc[-2]['Total']))
         st.write(str(df_graph.iloc[-1]['Date']) + ': ' + str(df_graph.iloc[-1]['Total']))
         st.pyplot(fig)
-        st.write(df_graph.tail())
     elif all_time:
         df_graph = show_df(select_df)
         df_graph = df_graph[df_graph['age'] == age_choice]
@@ -92,7 +91,6 @@ def select_age(age_choice):
         st.write(str(df_graph.iloc[-2]['Date']) + ': ' + str(df_graph.iloc[-2]['Total']))
         st.write(str(df_graph.iloc[-1]['Date']) + ': ' + str(df_graph.iloc[-1]['Total']))
         st.pyplot(fig)
-        st.write(df_graph.tail())
     else:
         df_graph = show_df(select_df)
         df_graph = df_graph[df_graph['age'] == age_choice]
@@ -110,7 +108,6 @@ def select_age(age_choice):
         st.write(str(df_graph.iloc[-2]['Date']) + ': ' + str(df_graph.iloc[-2]['Total']))
         st.write(str(df_graph.iloc[-1]['Date']) + ': ' + str(df_graph.iloc[-1]['Total']))
         st.pyplot(fig)
-        st.write(df_graph.tail())
 
 if age_choice == 'Over 50':
     select_age(age_choice)
