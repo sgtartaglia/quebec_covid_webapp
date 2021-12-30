@@ -10,6 +10,7 @@ from datetime import date, timedelta
 st.write("""
 # Quebec Covid Case & Hospitalization Tracker
 * Data Source: "https://msss.gouv.qc.ca/professionnels/statistiques/documents/covid19/"
+---
 
 """)
 
@@ -17,11 +18,12 @@ st.write("""
 # cases: "https://msss.gouv.qc.ca/professionnels/statistiques/documents/covid19/COVID19_Qc_RapportINSPQ_CasSelonStatutVaccinalEtAge.csv"
 
 st.sidebar.header("User Input")
+col1,col2 = st.columns([0.2,1])
 
 select_df = st.sidebar.selectbox('Hospitalizations or Cases', ['Cases','Hospitalizations'])
 age_choice = st.sidebar.selectbox('Hospitalizations or Cases', ['Over 50','Under 50', 'All ages'])
-last_30_days = st.sidebar.button(label='Last 30 Days')
-all_time = st.sidebar.button(label='All time')
+last_30_days = col1.button(label='Last 30 Days')
+all_time = col2.button(label='All time')
 
 
 def show_df(select_df):
@@ -66,10 +68,10 @@ def select_age(age_choice):
         plt.legend()
         plt.title(select_df + ' ' + age_choice)
         st.write(select_df +' for '+ age_choice +' last 5 days')
-        st.write(str(df_graph.iloc[-5]['Date']) + ': ' + str(df_graph.iloc[-1]['Total']))
-        st.write(str(df_graph.iloc[-4]['Date']) + ': ' + str(df_graph.iloc[-1]['Total']))
-        st.write(str(df_graph.iloc[-3]['Date']) + ': ' + str(df_graph.iloc[-1]['Total']))
-        st.write(str(df_graph.iloc[-2]['Date']) + ': ' + str(df_graph.iloc[-1]['Total']))
+        st.write(str(df_graph.iloc[-5]['Date']) + ': ' + str(df_graph.iloc[-5]['Total']))
+        st.write(str(df_graph.iloc[-4]['Date']) + ': ' + str(df_graph.iloc[-4]['Total']))
+        st.write(str(df_graph.iloc[-3]['Date']) + ': ' + str(df_graph.iloc[-3]['Total']))
+        st.write(str(df_graph.iloc[-2]['Date']) + ': ' + str(df_graph.iloc[-2]['Total']))
         st.write(str(df_graph.iloc[-1]['Date']) + ': ' + str(df_graph.iloc[-1]['Total']))
         st.pyplot(fig)
         st.write(df_graph.tail())
@@ -84,10 +86,10 @@ def select_age(age_choice):
         plt.legend()
         plt.title(select_df + ' ' + age_choice)
         st.write(select_df +' for '+ age_choice +' last 5 days')
-        st.write(str(df_graph.iloc[-5]['Date']) + ': ' + str(df_graph.iloc[-1]['Total']))
-        st.write(str(df_graph.iloc[-4]['Date']) + ': ' + str(df_graph.iloc[-1]['Total']))
-        st.write(str(df_graph.iloc[-3]['Date']) + ': ' + str(df_graph.iloc[-1]['Total']))
-        st.write(str(df_graph.iloc[-2]['Date']) + ': ' + str(df_graph.iloc[-1]['Total']))
+        st.write(str(df_graph.iloc[-5]['Date']) + ': ' + str(df_graph.iloc[-5]['Total']))
+        st.write(str(df_graph.iloc[-4]['Date']) + ': ' + str(df_graph.iloc[-4]['Total']))
+        st.write(str(df_graph.iloc[-3]['Date']) + ': ' + str(df_graph.iloc[-3]['Total']))
+        st.write(str(df_graph.iloc[-2]['Date']) + ': ' + str(df_graph.iloc[-2]['Total']))
         st.write(str(df_graph.iloc[-1]['Date']) + ': ' + str(df_graph.iloc[-1]['Total']))
         st.pyplot(fig)
         st.write(df_graph.tail())
@@ -102,10 +104,10 @@ def select_age(age_choice):
         plt.legend()
         plt.title(select_df + ' ' + age_choice)
         st.write(select_df +' for '+ age_choice +' last 5 days')
-        st.write(str(df_graph.iloc[-5]['Date']) + ': ' + str(df_graph.iloc[-1]['Total']))
-        st.write(str(df_graph.iloc[-4]['Date']) + ': ' + str(df_graph.iloc[-1]['Total']))
-        st.write(str(df_graph.iloc[-3]['Date']) + ': ' + str(df_graph.iloc[-1]['Total']))
-        st.write(str(df_graph.iloc[-2]['Date']) + ': ' + str(df_graph.iloc[-1]['Total']))
+        st.write(str(df_graph.iloc[-5]['Date']) + ': ' + str(df_graph.iloc[-5]['Total']))
+        st.write(str(df_graph.iloc[-4]['Date']) + ': ' + str(df_graph.iloc[-4]['Total']))
+        st.write(str(df_graph.iloc[-3]['Date']) + ': ' + str(df_graph.iloc[-3]['Total']))
+        st.write(str(df_graph.iloc[-2]['Date']) + ': ' + str(df_graph.iloc[-2]['Total']))
         st.write(str(df_graph.iloc[-1]['Date']) + ': ' + str(df_graph.iloc[-1]['Total']))
         st.pyplot(fig)
         st.write(df_graph.tail())
